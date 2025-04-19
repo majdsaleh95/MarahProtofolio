@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio | Marah Saleh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #6e45e2;
+      --secondary: #88d3ce;
+      --dark: #2c3e50;
+      --light: #f8f9fa;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light);
+      color: #333;
+      line-height: 1.8;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      text-align: center;
+      padding: 5rem 2rem;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      margin-bottom: 3rem;
+    }
+    
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    
+    h2 {
+      color: var(--dark);
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      border-radius: 2px;
+    }
+    footer h2::after{
+      display: none;
+    }
+    section {
+      padding: 3rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+    
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .card-content {
+      padding: 1.5rem;
+    }
+    
+    .card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+    
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 1rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    nav li {
+      margin: 0 1rem;
+    }
+    
+    nav a {
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 700;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+    
+    nav a:hover {
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+    
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      margin-top: 3rem;
+    }
+    
+    .social-links {
+      margin: 1.5rem 0;
+    }
+    
+    .social-links a {
+      color: white;
+      font-size: 1.5rem;
+      margin: 0 0.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: var(--secondary);
+      transform: translateY(-3px);
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      h2 {
+        font-size: 1.8rem;
+      }
+      
+      .projects {
+        grid-template-columns: 1fr;
+      }
+      
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      nav li {
+        margin: 0.5rem 0;
+      }
+      
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#photoshop">Photoshop</a></li>
+      <li><a href="#illustrator">Illustrator</a></li>
+      <li><a href="#indesign">InDesign</a></li>
+      <li><a href="#aftereffects">After Effects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Marah Saleh</h1>
+    <p>Graphic Designer | Photoshop - Illustrator - InDesign - After Effects</p>
+    <a href="#contact" class="btn">Contact Me</a>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a Computer and Automatic Control Engineer and a Master's student specializing in control systems.<br>
+      Throughout my academic journey, I've developed strong skills in logical thinking and analysis, and found visual design to be a creative way to express these skills.<br>
+      I work on various design projects using Adobe tools like Photoshop, Illustrator, InDesign and After Effects, always striving to deliver visuals that balance technical precision with aesthetic appeal.<br>
+      I believe design is not just art - it's a solution, and this is the approach I bring to every project I undertake.
+    </p>
+  </section>
+
+  <section id="photoshop">
+    <h2>Adobe Photoshop</h2>
+    <h3>Poster Design</h3>
+    <div class="projects">
+      <div class="card">
+        <img src="ps/poster/1.png" >
+      </div>
+      <div class="card">
+        <img src="ps/poster/2.png" >
+      </div>
+      <div class="card">
+        <img src="ps/poster/3.png" >
+      </div>
+      <div class="card">
+        <img src="ps/poster/4.png" >
+      </div>
+      <div class="card">
+        <img src="ps/poster/5.png" >
+      </div>
+      <div class="card">
+        <img src="ps/poster/6.png" >
+      </div>
+      <div class="card">
+        <img src="ps/poster/7.png" >
+      </div>
+      <div class="card">
+        <img src="ps/poster/8.png" >
+      </div>
+      <div class="card">
+        <img src="ps/poster/9.png" >
+      </div>
+      <div class="card">
+        <img src="ps/poster/10.png" >
+      </div>
+      <div class="card">
+        <img src="ps/poster/13.png" >
+      </div>
+      <div class="card">
+        <img src="ps/poster/14.png" >
+      </div>
+      <div class="card">
+        <img src="ps/poster/15.png" >
+      </div>
+      <div class="card">
+        <img src="ps/poster/16.png" >
+      </div>
+      <div class="card">
+        <img src="ps/poster/19.png" >
+      </div>
+      <div class="card">
+        <img src="ps/poster/22.png" >
+      </div>
+      <div class="card">
+        <img src="ps/poster/21.png" >
+      </div>
+      <div class="card">
+        <img src="ps/poster/23.png" >
+      </div>
+
+    </div>
+     <br>
+      <h3>Photo Editing</h3>
+      <br>
+      <div class="projects">
+     
+      <div class="card">
+        <img src="ps/merge/2 merge.png" >
+      </div>
+      <div class="card">
+        <img src="ps/merge/3 merge.png" >
+      </div>
+      <div class="card">
+        <img src="ps/merge/4 merge.png" >
+      </div>
+      <div class="card">
+        <img src="ps/merge/5 merge.png" >
+      </div>
+      <div class="card">
+        <img src="ps/merge/6 merge.png" >
+      </div>
+      <div class="card">
+        <img src="ps/merge/7 merge.png" >
+      </div>
+      <div class="card">
+        <img src="ps/merge/8 merge.png" >
+      </div>
+      <div class="card">
+        <img src="ps/merge/9 mergr.png" >
+      </div>
+      <div class="card">
+        <img src="ps/merge/10 merge.png" >
+      </div>
+      
+    </div>
+  
+  </section>
+
+  <section id="illustrator">
+    <h2>Adobe Illustrator</h2>
+    <h3>Poster Design</h3>
+    <div class="projects">
+      
+    
+      <div class="card">
+        <img src="AI/Social media/Artboard 1.png" >
+      </div>
+      <div class="card">
+        <img src="AI/Social media/Artboard 2.png" >
+      </div>
+      <div class="card">
+        <img src="AI/Social media/Artboard 3.png" >
+      </div> 
+      <div class="card">
+        <img src="AI/Social media/Artboard 4.png" >
+      </div>
+         </div>
+         <h3>Logo Design</h3>
+         <div class="projects">
+           <div class="card">
+             <img src="AI/logo/14.png" >
+           </div>
+           <div class="card">
+            <img src="AI/logo/17.png" >
+          </div>
+          <div class="card">
+            <img src="AI/logo/18.png" >
+          </div>
+          <div class="card">
+            <img src="AI/logo/19.png" >
+          </div>
+          <div class="card">
+            <img src="AI/logo/21.png" >
+          </div>
+          <div class="card">
+            <img src="AI/logo/27.png" >
+          </div>
+          <div class="card">
+            <img src="AI/logo/29.png" >
+          </div>
+          <div class="card">
+            <img src="AI/logo/30.png" >
+          </div>
+          <div class="card">
+            <img src="AI/logo/35.png" >
+          </div>
+          <div class="card">
+            <img src="AI/logo/36.png" >
+          </div>
+          <div class="card">
+            <img src="AI/logo/37.png" >
+          </div>
+          <div class="card">
+            <img src="AI/logo/39.png" >
+          </div>
+          <div class="card">
+            <img src="AI/logo/4.png" >
+          </div>
+          <div class="card">
+            <img src="AI/logo/7.png" >
+          </div>
+          <div class="card">
+            <img src="AI/logo/9.png" >
+          </div>
+ 
+         </div>
+         <h3>Art</h3>
+         <div class="projects">
+           <div class="card">
+             <img src="AI/art/1 art.png" >
+           </div>
+           <div class="card">
+             <img src="AI/art/2 art.png" >
+           </div>
+           <div class="card">
+             <img src="AI/art/3 art.png" >
+           </div>
+           <div class="card">
+             <img src="AI/art/4.png" >
+           </div>
+           <div class="card">
+            <img src="AI/art/5.png" >
+          </div>
+          <div class="card">
+            <img src="AI/art/6.png" >
+          </div>
+         </div>
+        <h3>Flyer</h3>
+        <div class="projects">
+          <div class="card">
+            <img src="AI/flyer/1Artboard 1.png" >
+          </div>
+          <div class="card">
+            <img src="AI/flyer/Artboard 2.png" >
+          </div>
+          <div class="card">
+            <img src="AI/flyer/Artboard 3.png" >
+          </div>
+          <div class="card">
+            <img src="AI/flyer/Artboard 4.png" >
+          </div>
+        </div>
+        <h3>Business Card Design</h3>
+        <div class="projects">
+          <div class="card">
+            <img src="AI/card/1 card-01.png" >
+          </div>
+          <div class="card">
+            <img src="AI/card/2.png" >
+          </div>
+          <div class="card">
+            <img src="AI/card/3-01.png" >
+          </div>
+          <div class="card">
+            <img src="AI/card/4.png" >
+          </div>
+        </div>
+       
+        <h3>Menu&Brochure Design</h3>
+        <div class="projects">
+          <div class="card">
+            <img src="AI/brochure/1.png" >
+          </div>
+          <div class="card">
+            <img src="AI/brochure/2.png" >
+          </div>
+          <div class="card">
+            <img src="AI/brochure/3.png" >
+          </div>
+
+
+        </div>
+  </section>
+
+  <section id="indesign">
+    <h2>Adobe InDesign</h2>
+    <h3>Magazine Design</h3>
+    
+      
+    <div class="pdf-viewer">
+      <iframe 
+        src="ID/1/1.pdf" 
+        width="100%" 
+        height="500px"
+        style="border: 1px solid #ddd; border-radius: 8px;"
+      ></iframe>
+    </div>
+  
+ 
+    <div class="pdf-viewer">
+      <iframe 
+        src="ID/2/2.pdf" 
+        width="100%" 
+        height="500px"
+        style="border: 1px solid #ddd; border-radius: 8px;"
+      ></iframe>
+    </div>
+ 
+  
+    <div class="pdf-viewer">
+      <iframe 
+        src="ID/3/3.pdf" 
+        width="100%" 
+        height="500px"
+        style="border: 1px solid #ddd; border-radius: 8px;"
+      ></iframe>
+    </div>
+  
+  <h3>Story Design</h3>
+ 
+      <div class="card">
+    <div class="pdf-viewer">
+      <iframe 
+        src="ID/4/4.pdf" 
+        width="100%" 
+        height="500px"
+        style="border: 1px solid #ddd; border-radius: 8px;"
+      ></iframe>
+    </div>
+  
+ </div>
+
+
+       
+       </section>
+  <section id="aftereffects">
+    
+    <h2>Adobe After Effects</h2>
+    <div class="projects">
+      <section id="video-section">
+         <div class="video-container">
+          <video controls width="100%">
+            <source src="AE/1.mp4" type="video/mp4">
+          </video>
+          </div>
+        </section>
+          <section id="video-section">
+        <div class="video-container">
+          <video controls width="100%">
+            <source src="AE/2.mp4" type="video/mp4">
+          </video>
+          </div>
+        </section>
+        <section id="video-section">
+          <div class="video-container">
+            <video controls width="100%">
+            <source src="AE/3.mp4" type="video/mp4">
+          </video>
+        </div>
+        </section>
+        <section id="video-section">
+        <div class="video-container">
+          <video controls width="100%">
+            <source src="AE/4.mp4" type="video/mp4">
+          </video>
+        </div>
+        </section>
+        <section id="video-section">
+        <div class="video-container">
+          <video controls width="100%">
+            <source src="AE/5.mp4" type="video/mp4"> 
+          </video>
+        </div>
+        </section>
+        <section id="video-section">
+        <div class="video-container">
+          <video controls width="100%">
+            <source src="AE/6.mp4" type="video/mp4">
+          </video>
+        </div>
+        </section>
+        <section id="video-section">
+        <div class="video-container">
+          <video controls width="100%">
+            <source src="AE/7.mp4" type="video/mp4">
+          </video>
+        </div>
+        </section>
+        <section id="video-section">
+        <div class="video-container">
+          <video controls width="100%">
+            <source src="AE/8.mp4" type="video/mp4">
+          </video>
+        </div>
+        </section>
+        <section id="video-section">
+        <div class="video-container">
+          <video controls width="100%">
+            <source src="AE/9.mp4" type="video/mp4">
+          </video>
+        </div>
+        </section>
+        <section id="video-section">
+        <div class="video-container">
+          <video controls width="100%">
+            <source src="AE/10.mp4" type="video/mp4">
+          </video>
+        </div>
+        </section>
+        <section id="video-section">
+            <div class="video-container">
+              <video controls width="100%">
+            <source src="AE/11.mp4" type="video/mp4">
+          </video>
+        </div>
+        </section>
+        <section id="video-section">
+            <div class="video-container">
+              <video controls width="100%">
+            <source src="AE/12.mp4" type="video/mp4">
+          </video>
+        </div>
+        </section>
+        <section id="video-section">
+            <div class="video-container">
+              <video controls width="100%">
+            <source src="AE/13.mp4" type="video/mp4">
+          </video>
+        </div>
+        </section>
+        <section id="video-section">
+            <div class="video-container">
+              <video controls width="100%">
+            <source src="AE/14.mp4" type="video/mp4">
+          </video>
+        </div>
+        </section>
+        <section id="video-section">
+            <div class="video-container">
+              <video controls width="100%">
+            <source src="AE/15.mp4" type="video/mp4">
+          </video>
+        </div>
+        </section>
+        <section id="video-section">
+            <div class="video-container">
+              <video controls width="100%">
+            <source src="AE/16.mp4" type="video/mp4">
+          </video>
+        </div>
+        </section>
+        
+        <section id="video-section">
+            <div class="video-container">
+              <video controls width="100%">
+            <source src="AE/17.mp4" type="video/mp4">
+          </video>
+        </div>
+        </section>
+        <section id="video-section">
+            <div class="video-container">
+              <video controls width="100%">
+            <source src="AE/18.mp4" type="video/mp4">
+           </video>
+        </div>
+      </section>
+    </section>
+  </section>
+  <footer id="contact">
+
+    <h2 style="color: rgb(255, 255, 255);" >Contact Me</h2>
+    <p>Email: <a href="mailto:example@example.com" style="color: var(--secondary);">marah7215@gmail.com</a></p>
+    <p>Phone: +963 994 034 192</p>
+   
+  </footer>
+</body>
+</html>
